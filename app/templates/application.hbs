@@ -1,25 +1,15 @@
- <div class="vertical-menu">
-  <a href="#" class="active">Home</a>
-  <a href="#">Country Layer</a>
-  <a href="#">City Layer</a>
-  <a href="#">Street Layer</a>
-  
-  <input type="checkbox" id="points"/>
-  <label for="points"> Mark As Point</label><br>
-  <input type="checkbox" id="images"/>
-  <label for="images"> Mark As Image</label><br>
-  
-</div> 
-<div class="show-map">
-    {{#mapbox-gl class='map-container full-screen' initOptions=(hash pitch=10) as |map|}}
-    {{#map.source options=(hash type='geojson') as |source|}}
-        {{source.layer layer=(hash
-        type='circle'
-        paint=(hash circle-color='#007cbf' circle-radius=10)
-         pitch=0)}}
-    {{/map.source}}
-    {{/mapbox-gl}} 
-</div>
+<main class="container-fluid" style="height: 100%;">
+    <div class="row" style="margin-top: 20px; height: 80%;">
+        <div class='col-md-3'>
+            <Navbar/>
+        </div>
+        <div class="col-md-7">
+            <Map />
+        </div> 
+    </div>
+</main>
+
+
 
 <!-- <MapboxGl id='map' class='map-container' as |map|>
   <map.source

@@ -1,0 +1,8 @@
+    {{#mapbox-gl class='map-container full-screen' initOptions=(hash pitch=10) as |map|}}
+    {{#map.source options=(hash type='geojson') as |source|}}
+        {{source.layer layer=(hash
+        type='circle'
+        paint=(hash circle-color='#007cbf' circle-radius=10)
+         pitch=0)}}
+    {{/map.source}}
+    {{/mapbox-gl}} 
