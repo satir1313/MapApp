@@ -2,6 +2,14 @@
 
 module.exports = function(environment) {
   let ENV = {
+    'mapbox-gl': {
+      accessToken: 'pk.eyJ1Ijoic2F0aXIxMzEzIiwiYSI6ImNrZXMyMmFqODE4YTMyeW9mYXlyZTA4YTEifQ.I8MyLChXTkbPpKXJj6a1Sg',
+      map: {
+        style: 'mapbox://styles/mapbox/basic-v9',
+        zoom: 13,
+        center: [ -96.7969879, 32.7766642 ],
+      }
+    },
     modulePrefix: 'map-application',
     environment,
     rootURL: '/',

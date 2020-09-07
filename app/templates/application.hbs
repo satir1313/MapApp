@@ -1,5 +1,34 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+ <div class="vertical-menu">
+  <a href="#" class="active">Home</a>
+  <a href="#">Country Layer</a>
+  <a href="#">City Layer</a>
+  <a href="#">Street Layer</a>
+  
+  <input type="checkbox" id="points"/>
+  <label for="points"> Mark As Point</label><br>
+  <input type="checkbox" id="images"/>
+  <label for="images"> Mark As Image</label><br>
+  
+</div> 
+<div class="show-map">
+    {{#mapbox-gl class='map-container full-screen' initOptions=(hash pitch=10) as |map|}}
+    {{#map.source options=(hash type='geojson') as |source|}}
+        {{source.layer layer=(hash
+        type='circle'
+        paint=(hash circle-color='#007cbf' circle-radius=10)
+         pitch=0)}}
+    {{/map.source}}
+    {{/mapbox-gl}} 
+</div>
 
-{{outlet}}
+<!-- <MapboxGl id='map' class='map-container' as |map|>
+  <map.source
+    @options=(hash type='geojson' data=(hash type='Point' coordinates=(array  -96.7969879, 32.7766642 ))) as |source|>
+    <source.layer layer=(hash
+      type='circle'
+      paint=(hash
+        circle-color='#007cbf'
+        circle-radius=10))/>
+  </map.source>
+</MapboxGl> -->
+
