@@ -5,7 +5,7 @@ export default Controller.extend({
   intl: service(),
   actions: { 
    changeLanguage: function() { 
-    var lang = $("#lan").val(); 
+    var lang = document.getElementById('lan').value;
     this.get('intl').setLocale([lang]); 
    } 
  } 

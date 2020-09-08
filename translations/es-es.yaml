@@ -1,13 +1,15 @@
 hello:
   world: Hola Mundo!
 
-Home: hogar
-
 Country:
   Layer: Capa de país
 
 City:
   Layer: Capa de ciudad
 
+Home: hogar
+
 Street:
   Layer: capa callejera
+
+  

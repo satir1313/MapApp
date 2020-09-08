@@ -1,13 +1,13 @@
 hello:
-  world: Hello World!
+  world: Hallo Wereld!
 
 Country:
-  Layer: Capa de país
+  Layer: land laag
 
 City:
-  Layer: Capa de ciudad
+  Layer: stadslaag
 
-Home: hogar
+Home: huis
 
 Street:
-  Layer: capa callejera
+  Layer: straatlaag

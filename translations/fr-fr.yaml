@@ -1,13 +1,13 @@
 hello:
-  world: Hello World!
+  world: Bonjour le monde!
 
 Country:
-  Layer: "Capa de país"
+  Layer: couche de pays
 
 City:
-  Layer: "Capa de ciudad"
+  Layer: couche ville
 
-Home: "hogar"
+Home: Accueil
 
 Street:
-  Layer: capa callejera
+  Layer: couche de rue
