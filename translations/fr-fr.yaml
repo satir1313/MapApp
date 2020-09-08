@@ -1,0 +1,13 @@
+hello:
+  world: Hello World!
+
+Country:
+  Layer: "Capa de país"
+
+City:
+  Layer: "Capa de ciudad"
+
+Home: "hogar"
+
+Street:
+  Layer: capa callejera

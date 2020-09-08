@@ -1,3 +1,13 @@
-price_banner: The {product} costs {price, number, USD}
 hello:
   world: Hello World!
+
+Country:
+  Layer: Capa de país
+
+City:
+  Layer: Capa de ciudad
+
+Home: hogar
+
+Street:
+  Layer: capa callejera
