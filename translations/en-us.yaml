@@ -1,0 +1,3 @@
+price_banner: The {product} costs {price, number, USD}
+hello:
+  world: Hello World!

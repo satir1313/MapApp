@@ -1,24 +1,14 @@
+<h1>{{t "hello.world"}}</h1>
 <main class="container-fluid" style="height: 100%;">
     <div class="row" style="margin-top: 20px; height: 80%;">
         <div class='col-md-3'>
             <Navbar/>
         </div>
         <div class="col-md-7">
-            <Map />
+            {{outlet}}
         </div> 
     </div>
 </main>
 
 
-
-<!-- <MapboxGl id='map' class='map-container' as |map|>
-  <map.source
-    @options=(hash type='geojson' data=(hash type='Point' coordinates=(array  -96.7969879, 32.7766642 ))) as |source|>
-    <source.layer layer=(hash
-      type='circle'
-      paint=(hash
-        circle-color='#007cbf'
-        circle-radius=10))/>
-  </map.source>
-</MapboxGl> -->
 
