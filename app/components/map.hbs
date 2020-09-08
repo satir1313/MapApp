@@ -1,8 +1,9 @@
-    {{#mapbox-gl class='map-container full-screen' initOptions=(hash pitch=10) as |map|}}
-    {{#map.source options=(hash type='geojson') as |source|}}
-        {{source.layer layer=(hash
-        type='circle'
-        paint=(hash circle-color='#007cbf' circle-radius=10)
-         pitch=0)}}
-    {{/map.source}}
+    {{#mapbox-gl class='map-container full-screen' initOptions=(hash pitch=10 center=this.center zoom=13 style=this.style) as |map|}}
+         {{#map.source options=(hash type='vector'
+        url='mapbox://mapbox.mapbox-terrain-v2') as |source|}}
+            {{source.layer layer=(hash id='mapbox-terrain' type='line' paint=(hash line-color='#ff69b4') layout=(hash visibility='visible' line-join='round') source-layer='contour')}}
+        {{/map.source}} 
+    {{!-- {{#map.source options=(hash type='vector' url='mapbox.mapbox-streets-v8') as |streets|}}
+            {{streets.layer layer=(hash type='line' paint=(hash line-color='#ff69b4') layout=(hash visibility='visible' line-join='round') source-layer='road')}}
+        {{/map.source}}  --}}  
     {{/mapbox-gl}} 
