@@ -1,6 +1,3 @@
-hello:
-  world: Hello World!
-
 Home: Home
 
 Country:
@@ -11,3 +8,10 @@ City:
 
 Street:
   Layer: street layer
+
+Mark:
+  As:
+    Point: Mark As Point
+
+Mark As:
+  Image: Mark As Image

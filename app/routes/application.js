@@ -6,6 +6,6 @@ export default Route.extend({
   async beforeModel() {
     this._super(...arguments);
  
-    this.intl.setLocale(['es-es']);
+    this.intl.setLocale(['en-us']);
   }
 });

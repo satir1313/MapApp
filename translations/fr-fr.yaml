@@ -1,6 +1,3 @@
-hello:
-  world: Bonjour le monde!
-
 Country:
   Layer: couche de pays
 
@@ -11,3 +8,11 @@ Home: Accueil
 
 Street:
   Layer: couche de rue
+
+Mark:
+  As:
+    Point: marquer comme point
+
+Mark As:
+  Image: marquer comme image
+

@@ -1,6 +1,3 @@
-hello:
-  world: Hola Mundo!
-
 Country:
   Layer: Capa de país
 
@@ -12,4 +9,9 @@ Home: hogar
 Street:
   Layer: capa callejera
 
-  
+Mark:
+  As:
+    Point: marcar como punto
+
+Mark As:
+  Image: marcar como imagen
