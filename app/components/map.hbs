@@ -1,10 +1,16 @@
 {{#mapbox-gl class='map-container full-screen' initOptions=(hash pitch=10 center=this.center zoom=this.zoom style=this.style data=@testMark) as |map|}}
 
-    {{map.on 'click' @onMapClick this m.features.coordinates}}
+    {{map.on 'click' @onMapClick}}
 
     {{#map.source options=(hash type='geojson' data=@markers) as |source|}}
         {{source.layer layer=(hash type='circle' paint=(hash circle-color='#007cbf' circle-radius=10))}}
-    {{/map.source}} 
+    {{/map.source}}
+
+    {{#each @markers.features as |feature| }}
+        {{#map.popup lngLat=feature.geometry.coordinates}}
+           <img src="/images/1.jpg">
+        {{/map.popup}} 
+    {{/each}}
 {{/mapbox-gl}} 
 
 

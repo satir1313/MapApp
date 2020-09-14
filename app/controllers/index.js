@@ -25,16 +25,12 @@ export default class MapController extends Controller {
     
 
       @action 
-        mapClicked({ target: map, point }) {
+        mapClicked() {
 
             this.marker.features.forEach(element => {
                 //element.setLngLat(element.features.coordinates);
-                console.log(map, point);
+                console.log( element.type);
             });
         }
 
-       // @action
-       //showMarker(map, point){
-          //  console.log(map, point);
-     //  }
 }
