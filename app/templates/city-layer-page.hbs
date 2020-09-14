@@ -1,5 +1,5 @@
  {{#mapbox-gl class='map-container full-screen' initOptions=(hash pitch=10 center=model.center zoom=model.zoom style=model.style) as |map|}}
          {{#map.source options=(hash type='vector' url='mapbox.mapbox-streets-v8') as |source|}}
-            {{source.layer layer=(hash id='mapbox-road' type='line' paint=(hash line-color='#ff69b4') layout=(hash visibility='visible' line-join='round') source-layer='place_label')}}
+            {{source.layer layer=(hash id='mapbox-terrain2' type='circle' circle-color="#ff69b4" circle-stroke-color="#ff69b4" source-layer='housenum_label')}}
         {{/map.source}} 
 {{/mapbox-gl}}

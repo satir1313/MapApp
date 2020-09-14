@@ -1,6 +1,10 @@
-    {{#mapbox-gl class='map-container full-screen' initOptions=(hash pitch=10 center=this.center zoom=this.zoom style=this.style) as |map|}}
-         {{#map.source options=(hash type='vector'
-        url='mapbox://mapbox.mapbox-terrain-v2') as |source|}}
-            {{source.layer layer=(hash id='mapbox-terrain' type='line' paint=(hash line-color='#ff69b4') layout=(hash visibility='visible' line-join='round') source-layer='contour')}}
-        {{/map.source}} 
-    {{/mapbox-gl}} 
+{{#mapbox-gl class='map-container full-screen' initOptions=(hash pitch=10 center=this.center zoom=this.zoom style=this.style data=@testMark) as |map|}}
+
+    {{map.on 'click' @onMapClick this m.features.coordinates}}
+
+    {{#map.source options=(hash type='geojson' data=@markers) as |source|}}
+        {{source.layer layer=(hash type='circle' paint=(hash circle-color='#007cbf' circle-radius=10))}}
+    {{/map.source}} 
+{{/mapbox-gl}} 
+
+
