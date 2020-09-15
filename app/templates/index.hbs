@@ -1,1 +1,19 @@
- <Map @onMapClick={{action 'mapClicked'}} @markers={{this.marker}} />  
+<HorizentalNavbar />
+<select {{action "changeLanguage" on="change"}} id="lan" style="margin-left: 20px;">
+  <option value="en-us">english</option> 
+  <option Value="es-es">Spanish</option>
+  <option value="de-de">Dutch</option>
+  <option value="fr-fr">French</option>
+</select>
+
+
+<main class="container-fluid" style="height: 100%;">
+    <div class="row" style="margin-top: 20px; height: 80%;">
+        <div class='col-md-3'>
+            <Navbar @onPChecked={{action 'checkPointBox'}} @onIChecked={{action 'checkImageBox' }} />
+        </div>
+        <div class="col-md-7" >
+            <Map @onMapClick={{action 'mapClicked'}} @markers={{this.marker}} @validatePointCheckBox={{this.checkPointboxValidation}} @validateImageCheckBox={{this.checkImageboxValidation}}/>  
+        </div> 
+    </div>
+</main>

@@ -1,5 +1,6 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
 export default class MapComponent extends Component{
 
@@ -7,10 +8,12 @@ export default class MapComponent extends Component{
         super(...arguments);
     }
     
+
     style = 'mapbox://styles/mapbox/light-v10';
     center = [115.86, -31.95];
     zoom = 10;
     marker;
+
 
     @action
     mouseEnter(){
@@ -21,6 +24,5 @@ export default class MapComponent extends Component{
     mouseLeave(){
         console.log("mouse left!");
     }
-
 
 }
