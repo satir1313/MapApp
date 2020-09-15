@@ -8,17 +8,20 @@ export default class MapController extends Controller {
           {
             id: 'marker1',
             type: 'Feature',
-            geometry: { type: 'Point', coordinates: [ 115.86, -31.95 ] }
+            geometry: { type: 'Point', coordinates: [ 115.86, -31.95 ] },
+            imageSrc: 'images/1.jpg'
           },
           {
             id: 'marker2',
             type: 'Feature',
-            geometry: { type: 'Point', coordinates: [ 115.80, -31.95 ] }
+            geometry: { type: 'Point', coordinates: [ 115.80, -31.95 ] },
+            imageSrc: 'images/1.jpg'
           },
           {
             id: 'marker3',
             type: 'Feature',
-            geometry: { type: 'Point', coordinates: [ 115.90, -31.95 ] }
+            geometry: { type: 'Point', coordinates: [ 115.90, -31.95 ] },
+            imageSrc: 'images/1.jpg'
           }
         ]
       };

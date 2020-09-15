@@ -12,6 +12,15 @@ export default class MapComponent extends Component{
     zoom = 10;
     marker;
 
-    
+    @action
+    mouseEnter(){
+        console.log("mouse entered!");
+    }
+
+    @action
+    mouseLeave(){
+        console.log("mouse left!");
+    }
+
 
 }
