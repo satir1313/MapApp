@@ -1,7 +1,7 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
-import { inject as service } from '@ember/service'; 
+
 
 
 export default class IndexController extends Controller {
@@ -9,6 +9,7 @@ export default class IndexController extends Controller {
   constructor(){
     super(...arguments);
   }
+  
   @tracked
   marker = {
       type: 'FeatureCollection',
@@ -37,6 +38,7 @@ export default class IndexController extends Controller {
       ]
     };
     
+  
 
   @action 
     mapClicked(ev) {
@@ -44,9 +46,9 @@ export default class IndexController extends Controller {
       let coord = `[${ev.lngLat.lat}, ${ev.lngLat.lng}]`;
       var mark;
 
-      mark.LngLat = coord;
+     //this.marker.LngLat = coord;
 
-      mark.features={
+      this.marker.features={
         id: 'marker4',
         type: 'Feature',
         geometry: {
@@ -56,9 +58,9 @@ export default class IndexController extends Controller {
         desc: 'third image'
       }
       console.log(coord);
-      console.log(mark.geometry.type);
-      this.marker = mark;
-      console.log(mark);
+      console.log(this.marker.features.geometry.type);
+      //this.marker = mark;
+      console.log(this.marker);
     }
 
     

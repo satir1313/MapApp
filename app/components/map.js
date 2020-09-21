@@ -14,9 +14,12 @@ export default class MapComponent extends Component{
     zoom = 11;
     marker;
  
+    @tracked markerData = this.args.markers; 
+
     @action
     mouseEnter(){
         console.log("mouse entered!");
+        console.log(this.markerData);
     }
 
     @action
