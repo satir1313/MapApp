@@ -1,15 +1,16 @@
-
-
 <HorizentalNavbar />
-<select {{action "changeLanguage" on="change"}} id="lan" style="margin-left: 20px;">
-  <option value="en-us">english</option> 
-  <option Value="es-es">Spanish</option>
-  <option value="de-de">Dutch</option>
-  <option value="fr-fr">French</option>
-</select>
+<main class="container-fluid" style="height: 100%;">
+    <div class="row" style="margin-top: 20px; height: 80%;">
+        <div class='col-md-3'>
+            <Navbar  />
+        </div>
+        <div class="col-md-7" >
+            {{#mapbox-gl class='map-container full-screen' initOptions=(hash pitch=10 center=model.center zoom=model.zoom style=model.style) as |map|}}
+              {{#map.source options=(hash type='vector' url='mapbox.mapbox-streets-v8') as |source|}}
+                 {{source.layer layer=(hash id='mapbox-terrain2' type='circle' circle-color="#ff69b4" circle-stroke-color="#ff69b4" source-layer='housenum_label')}}
+              {{/map.source}} 
+            {{/mapbox-gl}} 
+        </div> 
+    </div>
+</main>
 
-{{#mapbox-gl class='map-container full-screen' initOptions=(hash pitch=10 center=model.center zoom=model.zoom style=model.style) as |map|}}
-         {{#map.source options=(hash type='vector' url='mapbox.mapbox-streets-v8') as |source|}}
-            {{source.layer layer=(hash id='mapbox-terrain2' type='circle' circle-color="#ff69b4" circle-stroke-color="#ff69b4" source-layer='housenum_label')}}
-        {{/map.source}} 
-{{/mapbox-gl}}

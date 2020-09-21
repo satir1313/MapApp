@@ -21,7 +21,8 @@ body {
 }
 
 .vertical-menu {
-    width: 250px; /* Set a width if you like */
+    width: 350px; /* Set a width if you like */
+    margin-left: 10px;
   }
   
   .vertical-menu a {
@@ -38,6 +39,7 @@ body {
     display: block; /* Make the links appear below each other */
     padding: 12px; /* Add some padding */
     text-decoration: none; /* Remove underline from links */
+    margin: 0;
   }
   
   .vertical-menu a:hover {
@@ -61,6 +63,7 @@ img{
 }
 
 .HNav{
-  background: rgb(228, 225, 225);
+  background-image: url('/images/topImage.jpg');
   height: 120px;
 }
+

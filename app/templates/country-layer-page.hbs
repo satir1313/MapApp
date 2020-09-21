@@ -1,5 +1,15 @@
- {{#mapbox-gl class='map-container full-screen' initOptions=(hash pitch=10 center=model.center zoom=model.zoom style=model.style) as |map|}}
-         {{#map.source options=(hash type='vector' url='mapbox.mapbox-streets-v8') as |source|}}
-            {{source.layer layer=(hash id='mapbox-road' type='line' paint=(hash line-color='#ff69b4') layout=(hash visibility='visible' line-join='round') source-layer='place_label')}}
-        {{/map.source}} 
-{{/mapbox-gl}}
+ <HorizentalNavbar />
+<main class="container-fluid" style="height: 100%;">
+    <div class="row" style="margin-top: 20px; height: 80%;">
+        <div class='col-md-3'>
+            <Navbar  />
+        </div>
+        <div class="col-md-7" >
+                {{#mapbox-gl class='map-container full-screen' initOptions=(hash pitch=10 center=model.center zoom=model.zoom style=model.style) as |map|}}
+                        {{#map.source options=(hash type='vector' url='mapbox.mapbox-streets-v8') as |source|}}
+                                        {{source.layer layer=(hash id='mapbox-road' type='line' paint=(hash line-color='#ff69b4') layout=(hash visibility='visible' line-join='round') source-layer='place_label')}}
+                        {{/map.source}} 
+                {{/mapbox-gl}}
+        </div> 
+    </div>
+</main>
