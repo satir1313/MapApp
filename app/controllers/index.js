@@ -9,7 +9,7 @@ export default class IndexController extends Controller {
   constructor(){
     super(...arguments);
   }
-  
+  @tracked
   marker = {
       type: 'FeatureCollection',
       features: [
@@ -39,12 +39,26 @@ export default class IndexController extends Controller {
     
 
   @action 
-    mapClicked() {
+    mapClicked(ev) {
 
-        this.marker.features.forEach(element => {
-            //element.setLngLat(element.features.coordinates);
-            console.log( element.type);
-        });
+      let coord = `[${ev.lngLat.lat}, ${ev.lngLat.lng}]`;
+      var mark;
+
+      mark.LngLat = coord;
+
+      mark.features={
+        id: 'marker4',
+        type: 'Feature',
+        geometry: {
+          type:'Point',
+          coordinates: coord},
+        imageSrc: 'images/1.jpg',
+        desc: 'third image'
+      }
+      console.log(coord);
+      console.log(mark.geometry.type);
+      this.marker = mark;
+      console.log(mark);
     }
 
     
