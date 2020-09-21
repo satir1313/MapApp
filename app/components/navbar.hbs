@@ -4,9 +4,7 @@
     <LinkTo @route="city-layer-page">{{t "City.Layer"}}</LinkTo>
     <a href="#">{{t "Street.Layer"}}</a>
   
-    <input type="checkbox" id="points" class="input-menu"  {{on 'click' @onPChecked }}/> 
-    <label for="points" >{{t "Mark.As.Point"}}</label><br>
-    <Input type="checkbox" id="images" class="input-menu" @checked={{this.imgChecked}} {{on "click" @onIChecked}}/>
-    <label for="images"> {{t "Mark As.Image"}}</label><br>
+   <label><input type="checkbox" id="points" {{on 'click' @onPChecked }}/>     {{t "Mark.As.Point"}}</label>
+   <label><Input type="checkbox" id="images" @checked={{this.imgChecked}} {{on "click" @onIChecked}}/>    {{t "Mark As.Image"}}</label>
   
 </div> 

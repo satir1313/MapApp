@@ -13,8 +13,7 @@ export default class MapComponent extends Component{
     center = [115.86, -31.95];
     zoom = 10;
     marker;
-
-
+ 
     @action
     mouseEnter(){
         console.log("mouse entered!");

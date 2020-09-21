@@ -1,13 +1,15 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
+import { inject as service } from '@ember/service'; 
 
-export default class MapController extends Controller {
+
+export default class IndexController extends Controller {
 
   constructor(){
     super(...arguments);
   }
-
+  
   marker = {
       type: 'FeatureCollection',
       features: [
@@ -15,19 +17,22 @@ export default class MapController extends Controller {
           id: 'marker1',
           type: 'Feature',
           geometry: { type: 'Point', coordinates: [ 115.86, -31.95 ] },
-          imageSrc: 'images/1.jpg'
+          imageSrc: 'images/1.jpg',
+          desc:'first image'
         },
         {
           id: 'marker2',
           type: 'Feature',
           geometry: { type: 'Point', coordinates: [ 115.80, -31.95 ] },
-          imageSrc: 'images/1.jpg'
+          imageSrc: 'images/1.jpg',
+          desc:'second image'
         },
         {
           id: 'marker3',
           type: 'Feature',
           geometry: { type: 'Point', coordinates: [ 115.90, -31.95 ] },
-          imageSrc: 'images/1.jpg'
+          imageSrc: 'images/1.jpg',
+          desc:'third image'
         }
       ]
     };

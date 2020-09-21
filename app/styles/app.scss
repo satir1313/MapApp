@@ -21,10 +21,18 @@ body {
 }
 
 .vertical-menu {
-    width: 200px; /* Set a width if you like */
+    width: 250px; /* Set a width if you like */
   }
   
   .vertical-menu a {
+    background-color: #eee; /* Grey background color */
+    color: black; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+  }
+
+  .vertical-menu label {
     background-color: #eee; /* Grey background color */
     color: black; /* Black text color */
     display: block; /* Make the links appear below each other */
@@ -47,7 +55,12 @@ img{
 } 
 
 .popup-img{
-  height: 50px;
-  width: 50px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
+}
+
+.HNav{
+  background: rgb(228, 225, 225);
+  height: 120px;
 }
