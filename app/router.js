@@ -10,4 +10,5 @@ Router.map(function() {
   this.route('map');
   this.route('country-layer-page');
   this.route('city-layer-page');
+  this.route('about');
 });

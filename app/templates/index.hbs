@@ -1,13 +1,14 @@
 <HorizentalNavbar />
 
 <main class="container-fluid" style="height: 100%;">
-    <div class="row" style="margin-top: 20px; height: 80%;">
+
+   <div class="row" style="padding-top: 20px; height: 80%;">
         <div class="col-md-4">
-            <div class="row" style="margin-top: 20px; height: 40%;">
+            <div class="row" style="height: 50%;">
                 <Navbar @onPChecked={{action 'checkPointBox'}} @onIChecked={{action 'checkImageBox' }} />
             </div>
-            <div class="row" style="margin-top: 12px; height: 40%;">
-                <div style="margin-top: 15px; margin-left: 10px;">
+            <div class="row" style="margin-top: 12px; height: 50%;">
+                <div style="margin-left: 10px;">
                     {{ember-youtube ytid="ukzyBxQ9Zsc" volume=60 width=350}}
                 </div>
             </div>
@@ -18,10 +19,15 @@
         </div>
 
         <div class="col-md-7" >
-            <div class="row" style="margin-top: 12px; height: 60%; margin-right: 5%;">
+            <div class="row" style="margin-top: 12px; height: 60%; margin-right: 5%;" id="mapElement">
                 <Map @onMapClick={{action 'mapClicked'}} @markers={{this.marker}} @validatePointCheckBox={{this.pointChecked}}
                      @validateImageCheckBox={{this.imageChecked}}/>  
             </div>
         </div> 
+    </div> 
+
+    <div class="row" style="height: 20%; margin-top: 3%;" id="bottomMenu">
+        <div class="col-md-12"><Details /></div>
     </div>
 </main>
+
