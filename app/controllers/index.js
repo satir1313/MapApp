@@ -61,6 +61,7 @@ export default class MapController extends Controller {
 
 
    checkPointboxValidation(){
+     console.log("false is cheched");
     return this.pointChecked;
    }
 

@@ -1,5 +1,4 @@
-{{#mapbox-gl class='map-container full-screen' initOptions=(hash pitch=10 center=this.center zoom=this.zoom style=this.style) onLoad=(action @validatePointCheckBox @validateImageCheckBox) as |map|}}
-
+{{#mapbox-gl class='map-container full-screen' initOptions=(hash pitch=10 center=this.center zoom=this.zoom style=this.style) as |map|}}
     {{map.on 'click' @onMapClick}}
     {{map.on 'mouseover' this.mouseEnter}}
     {{map.on 'mouseout' this.mouseLeave}}

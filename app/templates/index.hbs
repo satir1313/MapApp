@@ -13,7 +13,7 @@
             <Navbar @onPChecked={{action 'checkPointBox'}} @onIChecked={{action 'checkImageBox' }} />
         </div>
         <div class="col-md-7" >
-            <Map @onMapClick={{action 'mapClicked'}} @markers={{this.marker}} @validatePointCheckBox={{this.checkPointboxValidation}} @validateImageCheckBox={{this.checkImageboxValidation}}/>  
+            <Map @onMapClick={{action 'mapClicked'}} @markers={{this.marker}} @validatePointCheckBox={{this.pointChecked}} @validateImageCheckBox={{this.imageChecked}}/>  
         </div> 
     </div>
 </main>

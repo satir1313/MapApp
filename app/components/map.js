@@ -24,5 +24,10 @@ export default class MapComponent extends Component{
     mouseLeave(){
         console.log("mouse left!");
     }
+    
+    @action
+    doubleClick(){
+        console.log("mouse Double Clicked!");
+    }
 
 }
