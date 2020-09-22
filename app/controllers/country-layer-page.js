@@ -52,8 +52,8 @@ export default class CountryLayerPageController extends Controller {
 
   @action 
   mapClicked(ev) {
-    let lati = (ev.lngLat.lat).toFixed(2);
-    let leng = (ev.lngLat.lng).toFixed(2);
+    let lati = (ev.lngLat.lat);
+    let leng = (ev.lngLat.lng);
     let coord = [ leng, lati ];
 
    this.marker = {
