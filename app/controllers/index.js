@@ -10,6 +10,12 @@ export default class IndexController extends Controller {
     super(...arguments);
   }
   
+
+  style = 'mapbox://styles/mapbox/light-v10';
+  center = [115.86, -31.95];
+  zoom = 11;
+
+
   @tracked
   marker = {
       type: 'FeatureCollection',

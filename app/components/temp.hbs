@@ -1,0 +1,22 @@
+{{!-- Initialize map and create map in the mapbox-gl container --}}
+{{#mapbox-gl class='map-container full-screen' initOptions=(hash pitch=10 center=this.center zoom=this.zoom style=this.style) as |map|}}
+    {{map.on 'click' @onMapClick}}
+    {{map.on 'mouseover' this.mouseEnter}}
+    {{map.on 'mouseout' this.mouseLeave}}
+ 
+    {{#if @satButtonClicked}}
+        {{#map.source options=(hash type=@sourceType url=@url tileSize=@tileSize) as |source|}} {{!-- Add source to the map --}}
+            {{source.layer layer=(hash type=@layerType) }}   {{!-- Add layer to the map --}}
+        {{/map.source}}
+    {{/if}}
+
+    {{#if @validateImageCheckBox }} {{!-- This if satatement create pop up on the marker points and show them if image checkbo is checked in index route --}}
+        {{#each @markers.features as |feature|}}
+            {{#map.popup lngLat=feature.geometry.coordinates initOptions=(hash closeButton=false closeOnMove=true) }}
+                    <img class="popup-img" src={{feature.imageSrc}}/>
+                    <div>{{feature.desc}}</div>
+            {{/map.popup}} 
+        {{/each}}
+    {{/if}}  
+    
+{{/mapbox-gl}} 

@@ -1,15 +1,44 @@
- <HorizentalNavbar />
-<main class="container-fluid" style="height: 100%;">
-    <div class="row" style="margin-top: 20px; height: 80%;">
-        <div class='col-md-3'>
-            <Navbar  />
+<HorizentalNavbar />
+
+<main class="container-fluid" style="height:100%;">
+
+   <div class="row" style="padding-top: 20px; height: 70%;">
+        <div class="col-md-4">
+            <div class="row" style="height: 50%;">
+                <Navbar @onPChecked={{action 'checkPointBox'}} @onIChecked={{action 'checkImageBox' }} />
+            </div>
+            <div class="row" style="margin-top: 12px; height: 50%;">
+                <div style="margin-left: 10px;">
+                    {{ember-youtube ytid="ukzyBxQ9Zsc" volume=60 width=350}}
+                </div>
+            </div>
         </div>
+
+        <div class="col-md-1">
+                <input type="button" value="Add satellite" id="satButton" {{on 'click' satAdd}}/>
+        </div>
+
         <div class="col-md-7" >
-                {{#mapbox-gl class='map-container full-screen' initOptions=(hash pitch=10 center=model.center zoom=model.zoom style=model.style) as |map|}}
-                        {{#map.source options=(hash type='vector' url='mapbox.mapbox-streets-v8') as |source|}}
-                                        {{source.layer layer=(hash id='mapbox-road' type='line' paint=(hash line-color='#ff69b4') layout=(hash visibility='visible' line-join='round') source-layer='place_label')}}
-                        {{/map.source}} 
-                {{/mapbox-gl}}
+            <div class="row" style="margin-top: 12px; height: 60%; margin-right: 5%;" id="mapElement">
+                <Map @onMapClick={{action 'mapClicked'}} @markers={{this.marker}} @validatePointCheckBox={{this.pointChecked}}
+                     @validateImageCheckBox={{this.imageChecked}} 
+                     @style={{this.style}}
+                     @center={{this.center}}
+                     @zoom={{this.zoom}}
+                     @sourceType={{this.sourceType}}
+                     @layerType={{this.layerType}}
+                     @url={{this.url}}
+                     @tileSize={{this.tileSize}}
+                     @satButtonClicked={{this.satButtonClicked}}
+                     />  
+            </div>
         </div> 
+    </div> 
+
+    <div class="row" style="height: 20%; margin-top: 3%;" id="bottomMenu">
+        <div class="col-md-12"><Details /></div>
     </div>
 </main>
+
+
+

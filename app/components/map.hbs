@@ -15,11 +15,18 @@
     {{#if @validateImageCheckBox }} {{!-- This if satatement create pop up on the marker points and show them if image checkbo is checked in index route --}}
         {{#each @markers.features as |feature|}}
             {{#map.popup lngLat=feature.geometry.coordinates initOptions=(hash closeButton=false closeOnMove=true) }}
-                <img class="popup-img" src={{feature.imageSrc}}/>
-                <div>{{feature.desc}}</div>
+                    <img class="popup-img" src={{feature.imageSrc}}/>
+                    <div>{{feature.desc}}</div>
             {{/map.popup}} 
         {{/each}}
     {{/if}}  
+
+    {{#if @satButtonClicked}}
+        {{#map.source options=(hash type=@sourceType url=@url tileSize=@tileSize) as |source|}} {{!-- Add source to the map --}}
+            {{source.layer layer=(hash type=@layerType) }}   {{!-- Add layer to the map --}}
+            {{source.layer layer=(hash type='circle' paint=(hash circle-color='#007cbf' circle-radius=10)) }}   {{!-- Add layer to the map --}}
+        {{/map.source}}
+    {{/if}}
     
 {{/mapbox-gl}} 
 
