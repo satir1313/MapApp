@@ -37,36 +37,44 @@ export default class IndexController extends Controller {
         }
       ]
     };
-    
-  
+
+    @tracked mapClickedToAddMarker = false;
 
   @action 
     mapClicked(ev) {
 
-      let coord = `[${ev.lngLat.lat}, ${ev.lngLat.lng}]`;
-      var mark;
+
+      let lati = (ev.lngLat.lat).toFixed(2);
+      let leng = (ev.lngLat.lng).toFixed(2);
+      let coord = [ leng, lati ];
+      //var mark;
 
      //this.marker.LngLat = coord;
 
-      this.marker.features={
-        id: 'marker4',
-        type: 'Feature',
-        geometry: {
-          type:'Point',
-          coordinates: coord},
-        imageSrc: 'images/1.jpg',
-        desc: 'third image'
-      }
+     this.marker = {
+      type: 'FeatureCollection',
+      features: [
+        {
+          id: 'marker4',
+          type: 'Feature',
+          geometry: { type: 'Point', coordinates: coord},
+          imageSrc: 'images/1.jpg',
+          desc:'forth image'
+        }
+       ]};
       console.log(coord);
-      console.log(this.marker.features.geometry.type);
+      console.log(this.marker.features[0].geometry.type);
       //this.marker = mark;
       console.log(this.marker);
+  
+      this.mapClickedToAddMarker = true;
     }
-
     
+
     
    @tracked pointChecked = false;
    @tracked imageChecked = false;
+   
 
    @action
    checkPointBox(){
@@ -82,7 +90,7 @@ export default class IndexController extends Controller {
 
 
    checkPointboxValidation(){
-     console.log("false is cheched");
+     console.log("false is checked");
     return this.pointChecked;
    }
 
