@@ -1,23 +1,19 @@
 {{!-- Initialize map and create map in the mapbox-gl container --}}
-{{@markers.features.length}}
 {{#mapbox-gl class='map-container full-screen' initOptions=(hash pitch=10 center=this.center zoom=this.zoom style=this.style) as |map|}}
     {{map.on 'click' @onMapClick}}
     {{map.on 'mouseover' this.mouseEnter}}
     {{map.on 'mouseout' this.mouseLeave}}
  
     {{#if @validatePointCheckBox }} {{!-- Get the boolean value of checkbox from iundex route --}} {{!-- This if satatement render markers as points --}}
-        {{#map.source options=(hash type='geojson' data=@markers) as |source|}} {{!-- Add source to the map --}}
-        {{source.layer layer=(hash type='circle' paint=(hash circle-color='#007cbf' circle-radius=10)) }}   {{!-- Add layer to the map --}}
-        {{/map.source}}
+        {{#let @markers as |markers|}}
+            {{#map.source options=(hash type='geojson' data=markers) as |source|}} {{!-- Add source to the map --}}
+                {{source.layer layer=(hash type='circle' paint=(hash circle-color='#007cbf' circle-radius=10)) }}   {{!-- Add layer to the map --}}
+            {{/map.source}}
+        {{/let}}
     {{/if}}
 
   
-            {{#if @mapClickedToAddMarker}}
-{{debugger}}
-                {{#map.source options=(hash type='geojson' data=@markers) as |source|}} {{!-- Add source to the map --}}
-                {{source.layer layer=(hash type='circle' paint=(hash circle-color='#007cbf' circle-radius=10)) }}   {{!-- Add layer to the map --}}
-                {{/map.source}}
-            {{/if}}
+
 
 
     {{#if @validateImageCheckBox }} {{!-- This if satatement create pop up on the marker points and show them if image checkbo is checked in index route --}}
