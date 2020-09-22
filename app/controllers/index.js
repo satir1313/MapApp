@@ -38,18 +38,12 @@ export default class IndexController extends Controller {
       ]
     };
 
-    @tracked mapClickedToAddMarker = false;
 
   @action 
     mapClicked(ev) {
-
-
       let lati = (ev.lngLat.lat).toFixed(2);
       let leng = (ev.lngLat.lng).toFixed(2);
       let coord = [ leng, lati ];
-      //var mark;
-
-     //this.marker.LngLat = coord;
 
      this.marker = {
       type: 'FeatureCollection',
@@ -62,19 +56,14 @@ export default class IndexController extends Controller {
           desc:'forth image'
         }
        ]};
+
       console.log(coord);
-      console.log(this.marker.features[0].geometry.type);
-      //this.marker = mark;
-      console.log(this.marker);
-  
-      this.mapClickedToAddMarker = true;
     }
     
-
     
    @tracked pointChecked = false;
    @tracked imageChecked = false;
-   
+
 
    @action
    checkPointBox(){

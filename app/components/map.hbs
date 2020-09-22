@@ -12,16 +12,12 @@
         {{/let}}
     {{/if}}
 
-  
-
-
-
     {{#if @validateImageCheckBox }} {{!-- This if satatement create pop up on the marker points and show them if image checkbo is checked in index route --}}
         {{#each @markers.features as |feature|}}
-        {{#map.popup lngLat=feature.geometry.coordinates initOptions=(hash closeButton=false closeOnMove=true) }}
-            <img class="popup-img" src={{feature.imageSrc}}/>
-            <div>{{feature.desc}}</div>
-        {{/map.popup}} 
+            {{#map.popup lngLat=feature.geometry.coordinates initOptions=(hash closeButton=false closeOnMove=true) }}
+                <img class="popup-img" src={{feature.imageSrc}}/>
+                <div>{{feature.desc}}</div>
+            {{/map.popup}} 
         {{/each}}
     {{/if}}  
     

@@ -13,18 +13,10 @@ export default class MapComponent extends Component{
     center = [115.86, -31.95];
     zoom = 11;
     marker;
- 
-
-  /*  @action
-    updateMarker(ev){
-        this.get('onMapClicked')(ev);
-        this.markerChanged = true;
-    }*/
 
     @action
     mouseEnter(){
         console.log("mouse entered!");
-        console.log(this.args.markers);
     }
 
     @action
