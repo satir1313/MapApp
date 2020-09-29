@@ -1,16 +1,50 @@
 <HorizentalNavbar />
-<main class="container-fluid" style="height: 100%;">
-    <div class="row" style="margin-top: 20px; height: 80%;">
-        <div class='col-md-3'>
-            <Navbar  />
+
+<main class="container-fluid" style="height:100%;">
+
+   <div class="row" style="padding-top: 20px; height: 70%;">
+        <div class="col-md-4">
+            <div class="row" style="height: 50%;">
+                <Navbar @onPChecked={{action 'checkPointBox'}} @onIChecked={{action 'checkImageBox' }} />
+            </div>
+            <div class="row" style="margin-top: 12px; height: 50%;">
+                <div style="margin-left: 10px;">
+                    {{ember-youtube ytid="ukzyBxQ9Zsc" volume=60 width=350}}
+                </div>
+            </div>
         </div>
+
+        <div class="col-md-1">
+                <input type="button" value="Add Contours" id="satButton" {{on 'click' satAdd}}/>
+        </div>
+
         <div class="col-md-7" >
-            {{#mapbox-gl class='map-container full-screen' initOptions=(hash pitch=10 center=model.center zoom=model.zoom style=model.style) as |map|}}
-              {{#map.source options=(hash type='vector' url='mapbox.mapbox-streets-v8') as |source|}}
-                 {{source.layer layer=(hash id='mapbox-terrain2' type='circle' circle-color="#ff69b4" circle-stroke-color="#ff69b4" source-layer='housenum_label')}}
-              {{/map.source}} 
-            {{/mapbox-gl}} 
+            <div class="row" style="margin-top: 12px; height: 80%; margin-right: 5%;" id="mapElement">
+                <Map @onMapClick={{action 'mapClicked'}} @markers={{this.marker}} @validatePointCheckBox={{this.pointChecked}}
+                     @validateImageCheckBox={{this.imageChecked}} 
+                     @style={{this.style}}
+                     @center={{this.center}}
+                     @zoom={{this.zoom}}
+                     @sourceType={{this.sourceType}}
+                     @layerType={{this.layerType}}
+                     @url={{this.url}}
+                     @contourButtonClicked={{this.contourButtonClicked}}
+                     @sourceLayer={{this.sourceLayer}}
+                     @layout={{this.layout}}
+                     @paint={{this.paint}}
+                     />  
+            </div>
+            
+            <li style="margin-top: 2%;">Shift + Hold right click to zoom map in box</li>
+            <li style="margin-top: 2%;"><a href="https://docs.mapbox.com/mapbox-gl-js/api/handlers/#keyboardhandler" target="_blank"> Keyboard shortcut</a> enabled</li>
+            
         </div> 
+    </div> 
+
+    <div class="row" style="height: 20%; margin-top: 3%;" id="bottomMenu">
+        <div class="col-md-12"><Details /></div>
     </div>
 </main>
+
+
 

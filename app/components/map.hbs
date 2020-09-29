@@ -30,5 +30,15 @@
             {{source.layer layer=(hash type='circle' paint=(hash circle-color='#007cbf' circle-radius=10)) }}   {{!-- Add layer to the map --}}
         {{/map.source}}
     {{/if}}
+
+
+    {{#if @contourButtonClicked}}
+        {{#map.source options=(hash type=@sourceType url=@url) as |source|}} {{!-- Add source to the map --}}
+            {{source.layer layer=(hash source-layer=@sourceLayer source='mapbox-terrain' type=@layerType 
+                layout=(hash line-join=@layout.linejoin line-cap=@layout.linecap) paint=(hash line-color=@paint.linecolor line-width=@paint.linewidth))}}   {{!-- Add layer to the map --}}
+            {{source.layer layer=(hash type='circle' paint=(hash circle-color='#007cbf' circle-radius=10)) }}   {{!-- Add layer to the map --}}
+        {{/map.source}}
+    {{/if}}
     
 {{/mapbox-gl}} 
+
