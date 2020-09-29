@@ -15,7 +15,6 @@ export default class IndexController extends Controller {
   center = [115.86, -31.95];
   zoom = 11;
 
-
   @tracked
   marker = {
       type: 'FeatureCollection',
@@ -47,8 +46,8 @@ export default class IndexController extends Controller {
 
   @action 
     mapClicked(ev) {
-      let lati = (ev.lngLat.lat).toFixed(2);
-      let leng = (ev.lngLat.lng).toFixed(2);
+      let lati = (ev.lngLat.lat);
+      let leng = (ev.lngLat.lng);
       let coord = [ leng, lati ];
 
      this.marker = {
@@ -92,5 +91,4 @@ export default class IndexController extends Controller {
    checkImageboxValidation(){
     return this.imageChecked;
    }
-
   }

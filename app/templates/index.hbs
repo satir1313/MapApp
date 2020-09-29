@@ -19,7 +19,7 @@
         </div>
 
         <div class="col-md-7" >
-            <div class="row" style="margin-top: 12px; height: 60%; margin-right: 5%;" id="mapElement">
+            <div class="row" style="margin-top: 12px; height: 80%; margin-right: 5%;" id="mapElement">
                 <Map @onMapClick={{action 'mapClicked'}} @markers={{this.marker}} @validatePointCheckBox={{this.pointChecked}}
                      @validateImageCheckBox={{this.imageChecked}} 
                      @style={{this.style}}
@@ -27,6 +27,11 @@
                      @zoom={{this.zoom}}
                      />  
             </div>
+
+            <li style="margin-top: 2%;">Shift + Hold left click to zoom map in box</li>
+            <li style="margin-top: 2%;"><a href="https://docs.mapbox.com/mapbox-gl-js/api/handlers/#keyboardhandler" target="_blank"> Keyboard shortcut</a> enabled</li>
+
+            
         </div> 
     </div> 
 

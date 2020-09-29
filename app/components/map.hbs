@@ -1,10 +1,12 @@
 {{!-- Initialize map and create map in the mapbox-gl container --}}
-{{#mapbox-gl class='map-container full-screen' initOptions=(hash pitch=10 center=this.center zoom=this.zoom style=this.style boxZoom=true) as |map|}}
+{{#mapbox-gl class='map-container full-screen' initOptions=(hash pitch=10 center=this.center zoom=this.zoom style=this.style boxZoom=true keyboard=true) as |map|}}
     {{map.on 'click' @onMapClick}}
     {{map.on 'mouseover' this.mouseEnter}}
     {{map.on 'mouseout' this.mouseLeave}}
-
-
+    {{map.on 'mouseout' this.mouseLeave}}
+    {{map.on 'contextmenu' this.rightClick}}
+    {{map.control this.navigationControl 'top-right'}}
+ 
     {{#if @validatePointCheckBox }} {{!-- Get the boolean value of checkbox from iundex route --}} {{!-- This if satatement render markers as points --}}
         {{#let @markers as |markers|}}
             {{#map.source options=(hash type='geojson' data=markers) as |source|}} {{!-- Add source to the map --}}
@@ -30,5 +32,3 @@
     {{/if}}
     
 {{/mapbox-gl}} 
-
-

@@ -48,8 +48,6 @@ export default class CountryLayerPageController extends Controller {
       ]
     };
 
-
-
   @action 
   mapClicked(ev) {
     let lati = (ev.lngLat.lat);
