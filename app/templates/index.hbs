@@ -3,7 +3,7 @@
 <main class="container-fluid" style="height:100%;">
 
    <div class="row" style="padding-top: 20px; height: 70%;">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="row" style="height: 50%;">
                 <Navbar @onPChecked={{action 'checkPointBox'}} @onIChecked={{action 'checkImageBox' }} />
             </div>
@@ -14,7 +14,14 @@
             </div>
         </div>
 
-        <div class="col-md-1">
+        <div class="col-md-2">
+
+
+            <label>Lng <input type="text" id="lng" style="margin-top:12px; margin-bottom: 10px; margin-left: 10px"/> </label>
+
+            <label>Lat <input type="text" id="lat" style="margin-top:12px; margin-left: 10px"/></label>
+
+            <input type="button" value="Add Marker" style="margin-top:12px; margin-left: 70px" {{on 'click' addMarker}} />
 
         </div>
 
@@ -25,6 +32,8 @@
                      @style={{this.style}}
                      @center={{this.center}}
                      @zoom={{this.zoom}}
+                     @newLng={{this.newLng}}
+                     @newLat={{this.newLat}}
                      />  
             </div>
 

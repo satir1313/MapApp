@@ -15,6 +15,9 @@ export default class IndexController extends Controller {
   center = [115.86, -31.95];
   zoom = 11;
 
+  @tracked newLng;
+  @tracked newLat;
+
   @tracked
   marker = {
       type: 'FeatureCollection',
@@ -90,5 +93,27 @@ export default class IndexController extends Controller {
 
    checkImageboxValidation(){
     return this.imageChecked;
+   }
+
+   @action
+   addMarker(ev){
+
+        this.newLng = document.getElementById('lng').value;
+        this.newLat = document.getElementById('lat').value;
+        
+        let coord = [ this.newLng, this.newLat ];
+
+        this.marker = {
+         type: 'FeatureCollection',
+         features: [
+           {
+             id: 'marker4',
+             type: 'Feature',
+             geometry: { type: 'Point', coordinates: coord},
+             imageSrc: 'images/1.jpg',
+             desc:'forth image'
+           }
+          ]};
+          console.log(coord);
    }
   }
