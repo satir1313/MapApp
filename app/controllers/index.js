@@ -98,22 +98,22 @@ export default class IndexController extends Controller {
    @action
    addMarker(ev){
 
-        this.newLng = document.getElementById('lng').value;
-        this.newLat = document.getElementById('lat').value;
-        
-        let coord = [ this.newLng, this.newLat ];
+    this.newLng = document.getElementById('lng').value;
+    this.newLat = document.getElementById('lat').value;
 
-        this.marker = {
-         type: 'FeatureCollection',
-         features: [
-           {
-             id: 'marker4',
-             type: 'Feature',
-             geometry: { type: 'Point', coordinates: coord},
-             imageSrc: 'images/1.jpg',
-             desc:'forth image'
-           }
-          ]};
-          console.log(coord);
+    let coord = [ this.newLng, this.newLat ];
+
+    this.marker = {
+      type: 'FeatureCollection',
+      features: [
+        {
+          id: 'marker4',
+          type: 'Feature',
+          geometry: { type: 'Point', coordinates: coord},
+          imageSrc: 'images/1.jpg',
+          desc:'forth image'
+        }
+      ]};
+      console.log(coord);
    }
   }
