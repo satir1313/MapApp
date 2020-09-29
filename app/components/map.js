@@ -1,6 +1,8 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { NavigationControl } from 'mapbox-gl';
+import { GeolocateControl } from 'mapbox-gl';
+import { MapboxOptions } from 'mapbox-gl';
 import { tracked } from '@glimmer/tracking';
 
 export default class MapComponent extends Component{
@@ -14,8 +16,22 @@ export default class MapComponent extends Component{
     zoom = this.args.zoom;
 
     get navigationControl() {
-        return new NavigationControl();
+        return new NavigationControl({
+            showCompass: true,
+            showZoom: true
+        });
     }
+
+    get geoLocate(){
+        return new GeolocateControl({
+            positionOptions: {
+            enableHighAccuracy: true
+            },
+            trackUserLocation: true
+        });
+    }
+
+
     @action
     mouseEnter(){
         console.log("mouse entered!");

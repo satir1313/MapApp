@@ -5,8 +5,10 @@
     {{map.on 'mouseout' this.mouseLeave}}
     {{map.on 'mouseout' this.mouseLeave}}
     {{map.on 'contextmenu' this.rightClick}}
-    {{map.control this.navigationControl 'top-right'}}
- 
+    {{map.control this.geoLocate 'bottom-right'}}
+    {{map.control this.navigationControl 'top-left'}}
+
+
     {{#if @validatePointCheckBox }} {{!-- Get the boolean value of checkbox from iundex route --}} {{!-- This if satatement render markers as points --}}
         {{#let @markers as |markers|}}
             {{#map.source options=(hash type='geojson' data=markers) as |source|}} {{!-- Add source to the map --}}
